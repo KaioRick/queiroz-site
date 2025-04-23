@@ -18,15 +18,16 @@
       <!-- Produtos renderizados aqui -->
     </div>
   
-    <div class="cart-container">
-        <button class="toggle-cart-btn" onclick="toggleCart()">🛒</button>
-        <div class="cart-box" id="cart-box">
-          <div class="cart-title">🛒 Carrinho</div>
-          <div id="cart-items"></div>
-          <div class="total" id="cart-total">Total: R$ 0,00</div>
-          <button class="btn-finalizar" onclick="enviarWhatsApp()">Finalizar Pedido</button>
-        </div>
-      </div>
+    <!-- Ícone flutuante do carrinho -->
+<div class="cart-icon" onclick="toggleCarrinho()">🛒</div>
+
+<!-- Painel lateral do carrinho -->
+<div class="cart-panel" id="carrinho">
+  <div class="cart-title">🛒 Carrinho</div>
+  <div id="cart-items"></div>
+  <div class="total" id="cart-total">Total: R$ 0,00</div>
+  <button class="btn-finalizar" onclick="enviarWhatsApp()">Finalizar Pedido</button>
+</div>
     <script src="script.js"></script>
     </body>
     </html>

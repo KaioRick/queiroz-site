@@ -85,7 +85,50 @@ body {
   right: 20px;
   z-index: 999;
 }
+/* Ícone flutuante redondo */
+.cart-icon {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 70px;
+  height: 70px;
+  background: #1a1a1a;
+  color: white;
+  font-size: 30px;
+  border-radius: 50%;
+  border: 2px solid #a678ff;
+  box-shadow: 0 0 15px #a678ff80;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 1000;
+  transition: transform 0.3s ease;
+}
 
+.cart-icon:hover {
+  transform: scale(1.1);
+}
+
+/* Painel lateral do carrinho */
+.cart-panel {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 300px;
+  height: 100%;
+  background: #1a1a1a;
+  padding: 20px;
+  box-shadow: -5px 0 15px #a678ff50;
+  z-index: 999;
+  transition: right 0.4s ease;
+  overflow-y: auto;
+}
+
+/* Painel visível */
+.cart-panel.aberto {
+  right: 0;
+}
 .cart-box {
   width: 320px;
   background: #1a1a1a;

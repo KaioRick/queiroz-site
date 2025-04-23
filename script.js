@@ -199,3 +199,7 @@ function mostrarPopupCarrinho() {
     const cart = document.getElementById("cart-box");
     cart.classList.toggle("ativo");
   }
+  function toggleCarrinho() {
+    const painel = document.getElementById("carrinho");
+    painel.classList.toggle("aberto");
+  }
