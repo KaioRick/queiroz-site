@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Queiroz3D</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="Logo/Roda.ico" type="image/png">
+
+</head>
+<body>
+    <div class="header" style="padding: 30px 0;">
+      <img src="/Logo/Queiroz.png" alt="Logo Queiroz"style="height: 200px; margin: 0 auto; display: block;">
+    </div>
+    
+  
+    <div class="main" id="product-list">
+      <!-- Produtos renderizados aqui -->
+    </div>
+  
+    <!-- Ícone flutuante do carrinho -->
+<div class="cart-icon" onclick="toggleCarrinho()">🛒</div>
+
+<!-- Painel lateral do carrinho -->
+<div class="cart-panel" id="carrinho">
+  <div class="cart-title">🛒 Carrinho</div>
+  <div id="cart-items"></div>
+  <div class="total" id="cart-total">Total: R$ 0,00</div>
+  <button class="btn-finalizar" onclick="enviarWhatsApp()">Finalizar Pedido</button>
+</div>
+    <script src="script.js"></script>
+    </body>
+    </html>
