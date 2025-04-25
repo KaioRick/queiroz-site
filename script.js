@@ -129,6 +129,11 @@ function mostrarPopupCarrinho() {
     const container = document.getElementById("cart-items");
     container.innerHTML = "";
     let total = 0;
+    const totalItens = carrinho.reduce((acc, item) => acc + item.qtd, 0);
+    const badge = document.getElementById("cart-count");
+    badge.innerText = totalItens;
+    badge.style.display = totalItens > 0 ? "inline-block" : "none";
+    
   
     carrinho.forEach((item, index) => {
       const subtotal = item.qtd * item.preco;
@@ -203,3 +208,4 @@ function mostrarPopupCarrinho() {
     const painel = document.getElementById("carrinho");
     painel.classList.toggle("aberto");
   }
+  
