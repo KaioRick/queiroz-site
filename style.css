@@ -11,15 +11,27 @@ body {
   display: block;
   filter: drop-shadow(0 0 40px #ffffff);
 }
-    .header {
-      background: linear-gradient(145deg, #7c3aed, #a678ff, #7c3aed);
-      padding: 20px;
-      text-align: center;
-      font-size: 2em;
-      color: #a678ff;
-      font-weight: bold;
+.header {
+  background: linear-gradient(145deg, #7c3aed, #a678ff, #7c3aed);
+  padding: 20px;
+  text-align: center;
+  font-size: 2em;
+  color: #a678ff;
+  font-weight: bold;
+  border: 0; /* Remove qualquer borda existente */
+  position: relative; /* Necessário para o pseudo-elemento */
+}
 
-    }
+.header::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 9px; /* Define a altura da borda */
+  background: linear-gradient(145deg, #5c01f8, #290277, #5e06f7); /* Gradiente para o "border" */
+   box-shadow: -1px 10px 13px rgba(0, 0, 0, 0.2); /* Sombra suave abaixo da borda */
+}
     .main {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
