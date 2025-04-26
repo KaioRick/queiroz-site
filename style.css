@@ -5,8 +5,10 @@ body {
   font-family: 'Segoe UI', sans-serif;
   width: 100%;
   margin: 0 auto;
-  position: relative; /* Necessário para aplicar a animação no fundo */
- }
+  position: relative;
+  overflow-x: hidden;
+}
+
 body::before {
   content: '';
   position: absolute;
@@ -16,19 +18,24 @@ body::before {
   height: 100%;
   background: linear-gradient(45deg, #7c3aed, #290277, #5c01f8);
   background-size: 400% 400%;
-  animation: lavaFlow 5s ease-in-out infinite; /* Define o tempo e a suavidade da animação */
-  z-index: -1; /* Coloca a animação atrás do conteúdo */
-  filter: blur(150px); /* Adiciona um efeito de desfoque para suavizar a transição das cores */
+  animation: lavaFlow 5s ease-in-out infinite;
+  z-index: -1;
+  filter: blur(150px);
+  pointer-events: none; /* garante que não interfira com cliques */
 }
+
+/* Otimização para Mobile */
 @media (max-width: 768px) {
-  .background-neon {
+  body::before {
     animation: none;
-    background: cor_fixa; /* mantém uma cor legal */
+    background-size: 200% 200%;
+    filter: blur(30px);
+    background-position: center;
+    background: linear-gradient(45deg, #7c3aed, #290277, #5c01f8); /* cor fixa parecida */
   }
 }
 
-
-/* Animação de movimento de lava fluida */
+/* Animação de movimento */
 @keyframes lavaFlow {
   0% {
     background-position: 100% 50%;
@@ -46,6 +53,7 @@ body::before {
     background-position: 100% 50%;
   }
 }
+
 
 .header img {
   height: 80px;
