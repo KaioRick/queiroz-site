@@ -6,6 +6,7 @@
     <title>Queiroz3D</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="Logo/Roda.ico" type="image/png">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 
 </head>
 <body>
@@ -13,6 +14,33 @@
       <img src="Logo/Queiroz.png" alt="Logo Queiroz"style="height: 200px; margin: 0 auto; display: block;">
     </div>
     
+ <!-- Ícone do menu -->
+<div class="menu-icon" id="menu-icon">☰</div>
+
+<!-- Menu lateral -->
+<nav class="side-menu" id="side-menu">
+  <img src="Logo/Queiroz.png" alt="Logo Queiroz"style="height: 100px; margin: 0 auto; display: block;">
+  <button class="close-btn" id="close-btn">&times;</button>
+  <ul>
+    <li><a href="#" data-section="contato">Fale Conosco</a></li>
+    <li><a href="#" data-section="sobre">Sobre Nós</a></li>
+  </ul>
+  <div class="menu-content" id="menu-content">
+    <!-- Aqui entra o conteúdo dinâmico -->
+  </div>
+  <div class="social-icons">
+    <a href="https://www.instagram.com/seuperfil" target="_blank" aria-label="Instagram">
+      <i class="fab fa-instagram"></i>    </a>
+    <a href="https://www.tiktok.com/@seuperfil" target="_blank" aria-label="TikTok">
+      <i class="fab fa-tiktok"></i>
+    </a>
+  </div>
+</nav>
+
+<!-- Overlay -->
+<div class="overlay" id="overlay"></div>
+
+
   
     <div class="main" id="product-list">
       <!-- Produtos renderizados aqui -->

@@ -221,4 +221,74 @@ function mostrarPopupCarrinho() {
     const painel = document.getElementById("carrinho");
     painel.classList.toggle("aberto");
   }
+  const menuIcon = document.getElementById('menu-icon');
+  const sideMenu = document.getElementById('side-menu');
+  const closeBtn = document.getElementById('close-btn');
+  const overlay = document.getElementById('overlay');
+  const menuLinks = sideMenu.querySelectorAll('a[data-section]');
+  const menuContent = document.getElementById('menu-content');
+  
+  let activeSection = null; // para controlar qual seção está ativa
+  
+  menuIcon.addEventListener('click', () => {
+    sideMenu.style.width = '300px';
+    overlay.style.display = 'block';
+  });
+  
+  closeBtn.addEventListener('click', closeMenu);
+  overlay.addEventListener('click', closeMenu);
+  
+  function closeMenu() {
+    sideMenu.style.width = '0';
+    overlay.style.display = 'none';
+    hideContent();
+    activeSection = null;
+  }
+  
+  // Conteúdos
+  const sections = {
+    contato: `
+      <h3>Fale Conosco</h3>
+      <p>Você pode entrar em contato conosco pelo WhatsApp ou e-mail.<br>
+      WhatsApp: (11) 99999-9999<br>
+      E-mail: contato@seusite.com</p>
+    `,
+    sobre: `
+      <h3>Sobre Nós</h3>
+      <p>Somos apaixonados por miniaturas 3D e criamos modelos únicos com muita dedicação.
+      Nosso estúdio é focado em entregar qualidade e detalhes incríveis em cada peça.</p>
+    `
+  };
+  
+  // Função para esconder com animação
+  function hideContent() {
+    menuContent.classList.remove('show');
+    setTimeout(() => {
+      menuContent.innerHTML = '';
+    }, 300); // espera o fade-out antes de limpar
+  }
+  
+  // Atualiza o conteúdo ao clicar nos links
+  menuLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const section = link.getAttribute('data-section');
+  
+      if (activeSection === section) {
+        hideContent();
+        activeSection = null;
+      } else {
+        menuContent.classList.remove('show'); // esconde antes
+        setTimeout(() => {
+          menuContent.innerHTML = sections[section] || '';
+          menuContent.classList.add('show'); // mostra com fade
+        }, 300); // pequena espera para o fade-out
+        activeSection = section;
+      }
+    });
+  });
+  
+  
+
+
   
