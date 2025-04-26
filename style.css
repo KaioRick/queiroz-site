@@ -20,6 +20,13 @@ body::before {
   z-index: -1; /* Coloca a animação atrás do conteúdo */
   filter: blur(150px); /* Adiciona um efeito de desfoque para suavizar a transição das cores */
 }
+@media (max-width: 768px) {
+  .background-neon {
+    animation: none;
+    background: cor_fixa; /* mantém uma cor legal */
+  }
+}
+
 
 /* Animação de movimento de lava fluida */
 @keyframes lavaFlow {
