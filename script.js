@@ -250,7 +250,7 @@ function mostrarPopupCarrinho() {
     contato: `
       <h3>Fale Conosco</h3>
       <p>Você pode entrar em contato conosco pelo WhatsApp ou e-mail.<br>
-      WhatsApp: (11) 99999-9999<br>
+      WhatsApp: (11) 96385-3664<br>
       E-mail: contato@seusite.com</p>
     `,
     sobre: `
