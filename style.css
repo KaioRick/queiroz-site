@@ -147,6 +147,47 @@ body::before {
   right: 20px;
   z-index: 999;
 }
+#alerta-personalizado {
+  display: none; /* Começa escondido */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: linear-gradient(145deg, #080311, #090313, #0e041f);
+  color: #fff;
+  font-weight: bolder;
+  padding: 100px;
+  border-radius: 15px;
+  box-shadow: 0 0 20px #a678ff80;
+  font-size: 1.2em;
+  text-align: center;
+  z-index: 2000;
+  animation: fadeInAlert 1 ease;
+  animation: fadeOutAlert 1 ease;
+}
+
+/* Animação suave */
+@keyframes fadeInAlert {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -60%);
+  }
+  to {
+    opacity: 2;
+    transform: translate(-50%, -50%);
+  }
+}
+@keyframes fadeOutAlert {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -60%);
+  }
+  to {
+    opacity: 2;
+    transform: translate(-50%, -50%);
+  }
+}
+
 /* Ícone flutuante redondo */
 .cart-icon {
   position: fixed;
@@ -168,6 +209,7 @@ body::before {
   transition: transform 0.3s ease;
 }
 .cart-count {
+  display: none;
   position: absolute;
   top: 5px;
   right: 5px;

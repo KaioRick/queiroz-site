@@ -143,10 +143,10 @@ function mostrarPopupCarrinho() {
     const container = document.getElementById("cart-items");
     container.innerHTML = "";
     let total = 0;
-    const totalItens = carrinho.reduce((acc, item) => acc + item.qtd, 0);
+    const totalProdutos = carrinho.length;
     const badge = document.getElementById("cart-count");
-    badge.innerText = totalItens;
-    badge.style.display = totalItens > 0 ? "inline-block" : "none";
+    badge.innerText = totalProdutos;
+    badge.style.display = totalProdutos > 0 ? "inline-block" : "none";
     
   
     carrinho.forEach((item, index) => {
@@ -177,9 +177,25 @@ function mostrarPopupCarrinho() {
   }
   function enviarWhatsApp() {
     if (carrinho.length === 0) {
-      alert("Seu carrinho está vazio.");
+      mostrarAlerta("Seu carrinho está vazio.");
       return;
     }
+    
+    // Aqui segue o restante do seu envio pro WhatsApp...
+  
+  
+  function mostrarAlerta(mensagem) {
+    const alerta = document.getElementById("alerta-personalizado");
+    const texto = document.getElementById("alerta-texto");
+    
+    texto.innerText = mensagem;
+    alerta.style.display = "block";
+  
+    // Some automaticamente depois de 3 segundos
+    setTimeout(() => {
+      alerta.style.display = "none";
+    }, 2000);
+  }
   
     let mensagem = "Olá! Quero fazer um pedido:\n\n";
     let total = 0;
