@@ -451,6 +451,9 @@ width: 300%; /* ou calc(100% * número de imagens) se quiser automatizar depois 
   left: 20px;
 }
 
+.side-menu h5{
+  text-align: center;
+}
 /* Menu lateral escondido */
 .side-menu {
   height: 100%;
